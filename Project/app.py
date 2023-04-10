@@ -6,8 +6,8 @@ app = Flask(__name__)
 
 
 app.secret_key = 'supersecretkey'
-CLIENT_ID = 'your_client_id'
-CLIENT_SECRET = 'your_client_secret'
+CLIENT_ID = '87a928e5713f44d082fdbb11eb0b8081'
+CLIENT_SECRET = '609f4ce2a45943429d6905cbe8f20752'
 REDIRECT_URI = 'http://localhost:5000/callback'
 
 @app.route('/')
