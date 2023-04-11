@@ -29,16 +29,17 @@ def get_liked_songs():
         results = sp.next(results)
         tracks.extend(results['items'])
 
-    # extracts the URL of each liked song
-    song_urls = [track['track']['external_urls']['spotify'] for track in tracks]
+    # create a list of tuples containing the song name, artist name, and album name
+    liked_songs = []
+    for item in tracks:
+        track = item['track']
+        track_name = track['name']
+        artist_name = track['artists'][0]['name']
+        album_name = track['album']['name']
+        liked_songs.append((track_name, artist_name, album_name))
 
-    # store the URLs in a file
-    with open('liked_song_urls.txt', 'w') as f:
-        for url in song_urls:
-            f.write(url + '\n')
-
-    return 'Liked songs saved to file!'
-
+    # render the template with the list of liked songs
+    return render_template('liked_songs.html', liked_songs=liked_songs)
 
 
 
@@ -57,6 +58,12 @@ def callback():
     token = util.oauth2.SpotifyOAuth(client_id=CLIENT_ID, client_secret=CLIENT_SECRET, redirect_uri=REDIRECT_URI, scope='user-read-private user-read-email', cache_path='.cache').get_access_token(code)
     session['access_token'] = token['access_token']
     return redirect('/')
+
+
+
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
