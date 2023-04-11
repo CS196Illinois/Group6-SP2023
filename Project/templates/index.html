@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>Sortify Login</title>
+    <title>Sortify Liked Songs</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@
             color: #ffffff;
         }
 
-        .login-container {
+        .liked-songs-container {
             background-color: #27ae60;
             border-radius: 10px;
             padding: 30px;
@@ -25,6 +25,17 @@
 
         h1 {
             margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+
+        li {
+            margin-bottom: 10px;
         }
 
         a {
@@ -43,10 +54,15 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <h1>Sortify Login</h1>
-        <p>Click the button below to log in to your Spotify account:</p>
-        <a href="https://accounts.spotify.com/authorize?client_id={{ client_id }}&response_type=code&redirect_uri={{ redirect_uri }}&scope=user-read-private%20user-read-email">Log in with Spotify</a>
+    <div class="liked-songs-container">
+        <h1>Sortify Liked Songs</h1>
+        <p>Here are your liked songs:</p>
+        <ul>
+            {% for song in liked_songs %}
+            <li>{{ song[0] }} - {{ song[1] }} ({{ song[2] }})</li>
+            {% endfor %}
+        </ul>
+        <a href="/">Log out</a>
     </div>
 </body>
 </html>
