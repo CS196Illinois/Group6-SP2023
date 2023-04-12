@@ -1,0 +1,61 @@
+.login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000;
+  color: #00ff00;
+}
+
+.logo {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.form-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.form-input {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #00ff00;
+  color: #000000;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.spotify-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #1DB954;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
