@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './App.css';
-import Home from './Home';
+//import Home from './Home';
 
 const AUTH_URL = 'https://accounts.spotify.com/authorize';
 const REDIRECT_URI = 'http://localhost:3000/home';
 const CLIENT_ID = 'dd4fcb9412ea4f6bab19c5bb8a4021c0';
 
-const Login = () => {
+const App = () => {
   const [code, setCode] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = () => {
     window.location = `${AUTH_URL}?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}`;
-    setLoggedIn(true)
   };
 
   const handleCallback = async () => {
@@ -47,4 +45,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default App;
